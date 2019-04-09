@@ -12,11 +12,18 @@ public class GameManager : MonoBehaviour
     public Text tempText;
 
     public string qText;
+    public Sprite[] qSprite;
+    public GameObject qObject;
+
+    SpriteRenderer qualityRenderer;
+    Animator anim;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        qualityRenderer = qObject.GetComponent<SpriteRenderer>();
+        anim = qObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -26,9 +33,9 @@ public class GameManager : MonoBehaviour
         tempText.text = qText;
     }
 
-    public void ShowQuality(string qualityText)
+    public void ShowQuality(int index)
     {
-        qText = qualityText;
-        Debug.Log("a");
+        qualityRenderer.sprite = qSprite[index];
+        anim.Play("QualityText");
     }
 }

@@ -39,25 +39,37 @@ public class ArrowButton : MonoBehaviour
 
     void QualityTiming(float dist)
     {
-        
-
         if(dist > 0.75f)
         {
-            gm.ShowQuality("absolute garbage");
+            gm.ShowQuality(0);
             Debug.Log("absolute garbage");
         }
-        else if(dist < 0.75 && dist > 0.4)
+        else if(dist < 0.75 && dist > 0.6)
         {
-            gm.ShowQuality("Nice");
+            gm.ShowQuality(1);
             Debug.Log("nice");
-            gm.score += 50;
+            gm.score += 10;
             gm.combo++;
+        }
+        else if(dist < 0.6 && dist > 0.4)
+        {
+            Debug.Log("Fucking noice");
+            gm.ShowQuality(2);
+            gm.score += 25;
+            gm.combo++;
+
+        }
+        else if(dist < 0.2 && dist > 0.1)
+        {
+            gm.ShowQuality(3);
+            gm.score += 100;
+            gm.combo++;
+
         }
         else
         {
-            Debug.Log("Fucking noice");
-            gm.ShowQuality("Fucking noice");
-            gm.score += 100;
+            gm.ShowQuality(4);
+            gm.score += 200;
             gm.combo++;
         }
 

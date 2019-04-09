@@ -2,12 +2,12 @@ fileFormatVersion: 2
 guid: 0170e4726d17cc043978626704fd85e0
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Tekst_5
-    21300002: Tekst_6
-    21300004: Tekst_7
-    21300006: Tekst_8
-    21300008: Tekst_0
-    21300010: Tekst_1
+    21300000: Good
+    21300002: OOF
+    21300004: Bad
+    21300006: Perfect
+    21300008: CykaBlyat
+    21300010: Okay
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -90,7 +90,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tekst_5
+      name: Good
       rect:
         serializedVersion: 2
         x: 173
@@ -98,7 +98,7 @@ TextureImporter:
         width: 335
         height: 89
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -110,7 +110,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tekst_6
+      name: OOF
       rect:
         serializedVersion: 2
         x: 220
@@ -118,7 +118,7 @@ TextureImporter:
         width: 244
         height: 89
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -130,7 +130,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tekst_7
+      name: Bad
       rect:
         serializedVersion: 2
         x: 213
@@ -138,7 +138,7 @@ TextureImporter:
         width: 255
         height: 89
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -150,7 +150,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tekst_8
+      name: Perfect
       rect:
         serializedVersion: 2
         x: 79
@@ -158,7 +158,7 @@ TextureImporter:
         width: 514
         height: 89
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -170,7 +170,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tekst_0
+      name: CykaBlyat
       rect:
         serializedVersion: 2
         x: 1
@@ -178,7 +178,7 @@ TextureImporter:
         width: 672
         height: 99
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -190,7 +190,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tekst_1
+      name: Okay
       rect:
         serializedVersion: 2
         x: 158
@@ -198,7 +198,7 @@ TextureImporter:
         width: 350
         height: 89
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
