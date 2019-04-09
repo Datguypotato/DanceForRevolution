@@ -56,13 +56,14 @@ public class ArrowButton : MonoBehaviour
         else
         {
             Debug.Log("Fucking noice");
+            gm.ShowQuality("Fucking noice");
             gm.score += 100;
             gm.combo++;
         }
 
     }
 
-    public void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Arrow"))
         {
@@ -71,11 +72,12 @@ public class ArrowButton : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Arrow"))
         {
             onTarget = false;
         }
     }
+
 }

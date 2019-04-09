@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ArrowSpawner : MonoBehaviour
 {
-    public AnimationClip clipTimer;
+    //public AnimationClip clipTimer;
 
     public Vector2[] spawnLocations;
     public GameObject[] Arrows;
@@ -27,14 +27,14 @@ public class ArrowSpawner : MonoBehaviour
     {
         int randomIdex = Random.Range(0, spawnLocations.Length);
 
-        Instantiate(Arrows[0], spawnLocations[randomIdex], transform.rotation);
+        Instantiate(Arrows[randomIdex], spawnLocations[randomIdex], transform.rotation);
 
 
         //Debug.Log("Spawned arrow!");
         //Debug.Log(randomIdex);
     }
 
-    public void SpawnRight()
+    public void SpawnLeft()
     {
         Instantiate(Arrows[0], spawnLocations[3], transform.rotation);
     }

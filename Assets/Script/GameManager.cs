@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public Text ScoreTXT;
     public Text tempText;
 
-    string qText;
+    public string qText;
 
     // Start is called before the first frame update
     void Start()
