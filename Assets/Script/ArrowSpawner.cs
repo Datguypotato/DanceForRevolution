@@ -14,7 +14,7 @@ public class ArrowSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SpawnRandomLoc();
+        SpawnHold();
     }
 
     // Update is called once per frame
@@ -37,5 +37,21 @@ public class ArrowSpawner : MonoBehaviour
     public void SpawnLeft()
     {
         Instantiate(Arrows[0], spawnLocations[3], transform.rotation);
+    }
+
+    public void SpawnHold()
+    {
+        int randomIndex = Random.Range(0, spawnLocations.Length);
+        StartCoroutine(LongArrow(randomIndex));
+    }
+
+    IEnumerator LongArrow(int randomIndex)
+    {
+        
+        for (int i = 0; i < 10; i++)
+        {
+            yield return new WaitForSeconds(0.1f);
+            Instantiate(Arrows[randomIndex], spawnLocations[randomIndex], transform.rotation);
+        }
     }
 }

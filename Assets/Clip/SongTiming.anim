@@ -168,7 +168,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 1
-    functionName: SpawnRight
+    functionName: SpawnRandomLoc
     data: 
     objectReferenceParameter: {fileID: 11500000, guid: 3f90e72c810c53645a3b336d919387ad,
       type: 3}
