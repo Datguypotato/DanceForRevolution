@@ -6,7 +6,11 @@ public class ArrowButton : MonoBehaviour
 {
     public KeyCode arrowButton;
 
+    public Sprite defaultSprite;
+    public Sprite pressedSprite;
+
     bool onTarget = false;
+    SpriteRenderer spriteRend;
     GameManager gm;
     GameObject target;
 
@@ -14,6 +18,7 @@ public class ArrowButton : MonoBehaviour
     void Awake()
     {
         gm = GameObject.FindObjectOfType<GameManager>();
+        spriteRend = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -34,6 +39,15 @@ public class ArrowButton : MonoBehaviour
             {
                 Debug.Log("You missed");
             }
+        }
+
+        if (Input.GetKey(arrowButton))
+        {
+            spriteRend.sprite = pressedSprite;
+        }
+        else
+        {
+            spriteRend.sprite = defaultSprite;
         }
     }
 
