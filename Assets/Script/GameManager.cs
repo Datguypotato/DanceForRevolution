@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public int score;
-    public int combo;
+    public float score;
+    public float combo;
 
     public Text ScoreTXT;
     public Text ComboText;
@@ -34,7 +35,9 @@ public class GameManager : MonoBehaviour
         if (!song.isPlaying)
         {
             //go to end screen
-            PlayerPrefs.SetInt("Score", score);
+            PlayerPrefs.SetFloat("Score", score);
+            PlayerPrefs.SetFloat("Combo", combo);
+            SceneManager.LoadSceneAsync("EndScreen");
         }
 
         ScoreTXT.text = score.ToString();
@@ -46,6 +49,11 @@ public class GameManager : MonoBehaviour
     {
         qualityRenderer.sprite = qSprite[index];
         anim.Play("QualityText");
+    }
+
+    public void AddScore(int s)
+    {
+        score = score + s * (1 + combo / 10);
     }
 
 }

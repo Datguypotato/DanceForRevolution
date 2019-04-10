@@ -9,7 +9,7 @@ public class ArrowHold : Arrow
     void Start()
     {
         Invoke("OOF", 2);
-        Destroy(this.gameObject, 3);
+        
 
     }
 
