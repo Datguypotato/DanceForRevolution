@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public int combo;
 
     public Text ScoreTXT;
-    public Text tempText;
+    public Text ComboText;
 
     public string qText;
     public Sprite[] qSprite;
@@ -29,8 +29,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         ScoreTXT.text = score.ToString();
-        tempText.text = qText;
+        ComboText.text = combo.ToString() + "X";
+
     }
 
     public void ShowQuality(int index)

@@ -8,7 +8,7 @@ public class ArrowSpawner : MonoBehaviour
 
     public Vector2[] spawnLocations;
     public GameObject[] Arrows;
-    public GameObject holdArrow;
+    public GameObject[] holdArrow;
 
     //index 0 = left || 1 = down || 2 = up || 3 = right
    
@@ -44,8 +44,8 @@ public class ArrowSpawner : MonoBehaviour
     public void SpawnHold()
     {
         int randomIndex = Random.Range(0, spawnLocations.Length);
-        GameObject hArrow = Instantiate(holdArrow, spawnLocations[randomIndex], transform.rotation);
-        StartCoroutine(hArrow.GetComponent<ArrowHold>().LongArrow(randomIndex, Arrows[randomIndex], spawnLocations[randomIndex]));
+        GameObject hArrow = Instantiate(holdArrow[randomIndex], spawnLocations[randomIndex], transform.rotation);
+        StartCoroutine(hArrow.GetComponent<ArrowHold>().LongArrow(randomIndex, holdArrow[randomIndex], spawnLocations[randomIndex]));
         
     }
 }

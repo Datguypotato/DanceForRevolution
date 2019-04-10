@@ -11,6 +11,7 @@ public class Arrow : MonoBehaviour
     {
         Destroy(this.gameObject, 3);
         Invoke("OOF", 2);
+        Debug.Log(Time.time);
     }
 
     // Update is called once per frame
@@ -30,5 +31,9 @@ public class Arrow : MonoBehaviour
     public void GoDown()
     {
         transform.Translate(Vector3.down * speed * Time.deltaTime);
+    }
+    private void OnDestroy()
+    {
+        Debug.Log(Time.time);
     }
 }
