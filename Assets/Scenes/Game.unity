@@ -844,6 +844,8 @@ MonoBehaviour:
   - {fileID: 288333750962322058, guid: 82ba097aa1a54bc4ab3b8f32287a202d, type: 3}
   - {fileID: 288333750962322058, guid: 081b62d75da86664db3b1abccbb20e57, type: 3}
   - {fileID: 288333750962322058, guid: 269080dda846e6240bddf10621543121, type: 3}
+  holdArrow: {fileID: 6697790183565443350, guid: b4d70bfecf95db24a87627fe7dda65da,
+    type: 3}
   holdArrow:
   - {fileID: 6697790183565443350, guid: b4d70bfecf95db24a87627fe7dda65da, type: 3}
   - {fileID: 6697790183565443350, guid: 07292ef7ed7dc1f42b957c6b76d4b45f, type: 3}
