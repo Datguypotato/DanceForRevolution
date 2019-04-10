@@ -26,7 +26,7 @@ public class ArrowButton : MonoBehaviour
     {
         if (Input.GetKeyDown(arrowButton))
         {
-            if (onTarget)
+            if (onTarget && target.CompareTag("Arrow"))
             {
                 float distance = Vector3.Distance(transform.position, target.transform.position);
                 //Debug.Log(distance);
@@ -44,6 +44,16 @@ public class ArrowButton : MonoBehaviour
         if (Input.GetKey(arrowButton))
         {
             spriteRend.sprite = pressedSprite;
+
+            if(onTarget && target.CompareTag("Hold"))
+            {
+                float distance = Vector3.Distance(transform.position, target.transform.position);
+
+                QualityTiming(distance);
+
+                Destroy(this.target);
+                onTarget = false;
+            }
         }
         else
         {
@@ -91,7 +101,7 @@ public class ArrowButton : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Arrow"))
+        if (other.CompareTag("Arrow") || other.CompareTag("Hold"))
         {
             target = other.gameObject;
             onTarget = true;

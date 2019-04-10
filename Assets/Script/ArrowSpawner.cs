@@ -8,13 +8,15 @@ public class ArrowSpawner : MonoBehaviour
 
     public Vector2[] spawnLocations;
     public GameObject[] Arrows;
+    public GameObject holdArrow;
+
     //index 0 = left || 1 = down || 2 = up || 3 = right
    
 
     // Start is called before the first frame update
     void Start()
     {
-        SpawnHold();
+        //SpawnHold();
     }
 
     // Update is called once per frame
@@ -42,16 +44,8 @@ public class ArrowSpawner : MonoBehaviour
     public void SpawnHold()
     {
         int randomIndex = Random.Range(0, spawnLocations.Length);
-        StartCoroutine(LongArrow(randomIndex));
-    }
-
-    IEnumerator LongArrow(int randomIndex)
-    {
+        GameObject hArrow = Instantiate(holdArrow, spawnLocations[randomIndex], transform.rotation);
+        StartCoroutine(hArrow.GetComponent<ArrowHold>().LongArrow(randomIndex, Arrows[randomIndex], spawnLocations[randomIndex]));
         
-        for (int i = 0; i < 10; i++)
-        {
-            yield return new WaitForSeconds(0.1f);
-            Instantiate(Arrows[randomIndex], spawnLocations[randomIndex], transform.rotation);
-        }
     }
 }
