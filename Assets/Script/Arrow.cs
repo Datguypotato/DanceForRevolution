@@ -32,8 +32,10 @@ public class Arrow : MonoBehaviour
     {
         transform.Translate(Vector3.down * speed * Time.deltaTime);
     }
-    private void OnDestroy()
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        //Debug.Log(Time.time);
+        if (other.CompareTag("OOF"))
+            Destroy(this.gameObject);
     }
 }
