@@ -9,9 +9,9 @@ public class Arrow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(this.gameObject, 3);
+        //Destroy(this.gameObject, 3);
         Invoke("OOF", 2);
-        Debug.Log(Time.time);
+        //Debug.Log(Time.time);
     }
 
     // Update is called once per frame
@@ -34,6 +34,6 @@ public class Arrow : MonoBehaviour
     }
     private void OnDestroy()
     {
-        Debug.Log(Time.time);
+        //Debug.Log(Time.time);
     }
 }

@@ -18,10 +18,12 @@ public class GameManager : MonoBehaviour
     SpriteRenderer qualityRenderer;
     Animator anim;
 
+    public AudioSource song;
 
     // Start is called before the first frame update
     void Start()
     {
+        InvokeRepeating("HelpMe", 1, 1);
         qualityRenderer = qObject.GetComponent<SpriteRenderer>();
         anim = qObject.GetComponent<Animator>();
     }
@@ -39,5 +41,11 @@ public class GameManager : MonoBehaviour
     {
         qualityRenderer.sprite = qSprite[index];
         anim.Play("QualityText");
+    }
+
+    public void HelpMe()
+    {
+        Debug.Log(song.timeSamples);
+        Debug.Log(Time.time);
     }
 }

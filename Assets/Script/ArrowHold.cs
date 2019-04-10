@@ -11,7 +11,6 @@ public class ArrowHold : Arrow
         Invoke("OOF", 2);
         Destroy(this.gameObject, 3);
 
-        Debug.Log(Time.time);
     }
 
     // Update is called once per frame

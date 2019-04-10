@@ -36,9 +36,9 @@ public class ArrowSpawner : MonoBehaviour
         //Debug.Log(randomIdex);
     }
 
-    public void SpawnLeft()
+    public void spawnLoc(int i)
     {
-        Instantiate(Arrows[0], spawnLocations[3], transform.rotation);
+        Instantiate(Arrows[i], spawnLocations[i], transform.rotation);
     }
 
     public void SpawnHold()
@@ -47,5 +47,10 @@ public class ArrowSpawner : MonoBehaviour
         GameObject hArrow = Instantiate(holdArrow[randomIndex], spawnLocations[randomIndex], transform.rotation);
         StartCoroutine(hArrow.GetComponent<ArrowHold>().LongArrow(randomIndex, holdArrow[randomIndex], spawnLocations[randomIndex]));
         
+    }
+
+    public void timer()
+    {
+        Debug.Log(Time.time);
     }
 }

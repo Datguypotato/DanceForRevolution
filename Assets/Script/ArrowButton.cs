@@ -9,6 +9,9 @@ public class ArrowButton : MonoBehaviour
     public Sprite defaultSprite;
     public Sprite pressedSprite;
 
+    public bool createSong;
+    public GameObject arrow;
+
     bool onTarget = false;
     SpriteRenderer spriteRend;
     GameManager gm;
@@ -26,7 +29,7 @@ public class ArrowButton : MonoBehaviour
     {
         if (Input.GetKeyDown(arrowButton))
         {
-            if (onTarget && target.CompareTag("Arrow"))
+            if (!createSong && onTarget && target.CompareTag("Arrow"))
             {
                 float distance = Vector3.Distance(transform.position, target.transform.position);
                 //Debug.Log(distance);
@@ -35,10 +38,11 @@ public class ArrowButton : MonoBehaviour
                 Destroy(this.target);
                 onTarget = false;
             }
-            else
-            {
-                Debug.Log("You missed");
-            }
+
+            Debug.Log(Time.time);
+
+            if (createSong)
+                spawnArrow();
         }
 
         if (Input.GetKey(arrowButton))
@@ -59,6 +63,11 @@ public class ArrowButton : MonoBehaviour
         {
             spriteRend.sprite = defaultSprite;
         }
+    }
+
+    void spawnArrow()
+    {
+        Instantiate(arrow, transform.position, transform.rotation);
     }
 
     void QualityTiming(float dist)
