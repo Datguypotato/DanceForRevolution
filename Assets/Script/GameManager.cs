@@ -31,6 +31,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!song.isPlaying)
+        {
+            //go to end screen
+            PlayerPrefs.SetInt("Score", score);
+        }
 
         ScoreTXT.text = score.ToString();
         ComboText.text = combo.ToString() + "X";
@@ -43,9 +48,4 @@ public class GameManager : MonoBehaviour
         anim.Play("QualityText");
     }
 
-    public void HelpMe()
-    {
-        Debug.Log(song.timeSamples);
-        Debug.Log(Time.time);
-    }
 }
