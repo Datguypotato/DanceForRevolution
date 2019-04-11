@@ -20,20 +20,22 @@ public class Arrow : MonoBehaviour
         GoDown();
     }
 
-    public void OOF()
-    {
-        GameManager gm = GameObject.FindObjectOfType<GameManager>();
-
-        gm.combo = 0;
-        gm.ShowQuality(5);
-    }
 
     public void GoDown()
     {
         transform.Translate(Vector3.down * speed * Time.deltaTime);
     }
-    private void OnDestroy()
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        //Debug.Log(Time.time);
+        if (other.CompareTag("OOF"))
+        {
+            GameManager gm = GameObject.FindObjectOfType<GameManager>();
+
+            gm.combo = 0;
+            gm.ShowQuality(5);
+            Destroy(this.gameObject);
+        }
+            
     }
 }

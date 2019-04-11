@@ -9,7 +9,7 @@ public class ActivateSound : MonoBehaviour
     {
         if (Input.anyKeyDown)
         {
-            SceneManager.LoadScene("Game");
+            SceneManager.LoadSceneAsync("Game");
         }
     }
 
